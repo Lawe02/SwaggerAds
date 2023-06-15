@@ -25,12 +25,12 @@ namespace SwaggerAds.Data
         /// <summary>
         /// Migrates the database and seeds initial data.
         /// </summary>
-        public void MigrateData()
-        {
-            _dbContext.Database.Migrate();
-            SeedData();
+        //public void MigrateData()
+        //{
+        //    _dbContext.Database.Migrate();
+        //    SeedData();
 
-        }
+        //}
 
         private void SeedData()
         {
