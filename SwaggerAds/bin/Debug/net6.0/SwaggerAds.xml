@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>api</name>
+    </assembly>
+    <members>
+        <member name="M:api.Controllers.AdsController.GetAll">
+            <summary>
+            Retrieve ALL adverts from the database
+            </summary>
+            <returns>
+            A full list of ALL adverts
+            </returns>
+            <remarks>
+            Example end point: GET /api/Ads
+            </remarks>
+        </member>
+        <member name="M:api.Controllers.AdsController.GetAd(System.Int32)">
+            <summary>
+            Retrieve one advert
+            </summary>
+            <returns>
+            One advert
+            </returns>
+            <remarks>
+            Eaxmple end point: Get /api/Ads?id=4
+            </remarks>
+        </member>
+        <member name="M:api.Controllers.AdsController.CreateAd(api.Models.Ads)">
+            <summary>
+            Create one advert
+            </summary>
+            <returns>
+            Nada
+            </returns>
+            <remarks>
+            Eaxmple end point: Post /api/Ads
+            </remarks>
+        </member>
+        <member name="M:api.Controllers.AdsController.DeleteAd(System.Int32)">
+            <summary>
+            Delete one advert
+            </summary>
+            <returns>
+            Nada
+            </returns>
+            <remarks>
+            Eaxmple end point: Get /api/Ads?id=4
+            </remarks>
+            
+        </member>
+        <member name="T:api.Data.ApplicationDbContext">
+            <summary>
+            Represents the application database context.
+            </summary>
+        </member>
+        <member name="P:api.Data.ApplicationDbContext.AdContext">
+            <summary>
+            Gets or sets the collection of ads in the context.
+            </summary>
+        </member>
+        <member name="T:api.Data.DataInitializer">
+            <summary>
+            Class responsible for initializing data in the application.
+            </summary>
+        </member>
+        <member name="M:api.Data.DataInitializer.#ctor(api.Data.ApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:api.Data.DataInitializer"/> class.
+            </summary>
+            <param name="dbContext">The application database context.</param>
+        </member>
+        <member name="M:api.Data.DataInitializer.MigrateData">
+            <summary>
+            Migrates the database and seeds initial data.
+            </summary>
+        </member>
+        <member name="T:api.Migrations.initialmigration">
+            <inheritdoc />
+        </member>
+        <member name="M:api.Migrations.initialmigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api.Migrations.initialmigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api.Migrations.initialmigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:api.Migrations.anka">
+            <inheritdoc />
+        </member>
+        <member name="M:api.Migrations.anka.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api.Migrations.anka.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:api.Migrations.anka.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
