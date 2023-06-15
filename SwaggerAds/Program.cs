@@ -96,10 +96,10 @@ builder.Services.AddTransient<DataInitializer>();
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    scope.ServiceProvider.GetService<DataInitializer>().MigrateData();
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    scope.ServiceProvider.GetService<DataInitializer>().MigrateData();
+//}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
