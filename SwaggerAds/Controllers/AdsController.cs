@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace SwaggerAds.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("/")]
 [EnableCors("AllowAl")]
 
 public class AdsController : ControllerBase
