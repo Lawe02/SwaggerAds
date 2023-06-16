@@ -103,16 +103,16 @@ var app = builder.Build();
 //}
 
 // Configure the HTTP request pipeline.
-    app.UseSwagger();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Name");
 });
-if (app.Environment.IsDevelopment())
-{
-    Console.WriteLine("Anka");
-}
-
 app.UseHttpsRedirection();
 
 
