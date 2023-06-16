@@ -53,14 +53,14 @@ sw =>
     sw.IncludeXmlComments(xmlPath);
 });
 
-builder.Services.ConfigureSwaggerGen(setup =>
-{
-    setup.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
-    {
-        Title = "Ads api",
-        Version = "v1"
-    });
-});
+//builder.Services.ConfigureSwaggerGen(setup =>
+//{
+//    setup.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+//    {
+//        Title = "Ads api",
+//        Version = "v1"
+//    });
+//});
 
 // Lägg till min DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -93,7 +93,7 @@ builder.Services.AddCors(o => o.AddPolicy("AllowAll", builder =>
         .AllowAnyHeader();
 }));
 
-builder.Services.AddTransient<DataInitializer>();
+//builder.Services.AddTransient<DataInitializer>();
 
 var app = builder.Build();
 
