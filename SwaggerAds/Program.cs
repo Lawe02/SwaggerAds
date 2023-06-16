@@ -53,14 +53,14 @@ sw =>
     sw.IncludeXmlComments(xmlPath);
 });
 
-//builder.Services.ConfigureSwaggerGen(setup =>
-//{
-//    setup.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
-//    {
-//        Title = "Ads api",
-//        Version = "v1"
-//    });
-//});
+builder.Services.ConfigureSwaggerGen(setup =>
+{
+    setup.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "Ads api",
+        Version = "v1"
+    });
+});
 
 // Lägg till min DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -109,10 +109,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 app.UseSwagger();
-app.UseSwaggerUI(c =>
-{
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Name");
-});
+app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 
