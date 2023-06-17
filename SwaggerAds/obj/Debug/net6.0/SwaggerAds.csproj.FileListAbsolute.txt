@@ -72,3 +72,5 @@ C:\Users\lawza\source\repos\SwaggerAds\SwaggerAds\obj\Debug\net6.0\refint\Swagge
 C:\Users\lawza\source\repos\SwaggerAds\SwaggerAds\obj\Debug\net6.0\SwaggerAds.pdb
 C:\Users\lawza\source\repos\SwaggerAds\SwaggerAds\obj\Debug\net6.0\SwaggerAds.genruntimeconfig.cache
 C:\Users\lawza\source\repos\SwaggerAds\SwaggerAds\obj\Debug\net6.0\ref\SwaggerAds.dll
+C:\Users\lawza\source\repos\SwaggerAds\SwaggerAds\bin\Debug\net6.0\SwaggerAds.xml
+C:\Users\lawza\source\repos\SwaggerAds\SwaggerAds\obj\Debug\net6.0\SwaggerAds.xml
