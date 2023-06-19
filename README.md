@@ -7,7 +7,7 @@ This API provides endpoints to perform CRUD operations on ads.
 
 ## Base URL
 
-The base URL for all endpoints is https://localhost:7088/swagger/index.html .
+The base URL for all endpoints is https://deletemee20230616111844.azurewebsites.net/swagger/index.html) .
 
 ## Retrieve All Ads
 
