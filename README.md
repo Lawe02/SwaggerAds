@@ -7,7 +7,7 @@ This API provides endpoints to perform CRUD operations on ads.
 
 ## Base URL
 
-The base URL for all endpoints is `example.ceom/api/ads`.
+The base URL for all endpoints is example.ceom/api/ads`](https://localhost:7088/swagger/index.html .
 
 ## Retrieve All Ads
 
