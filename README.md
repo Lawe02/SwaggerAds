@@ -1,5 +1,5 @@
 ﻿# SwaggerAds
-# API Handlers for Example API
+# API Handlers for SwaggerAds API
 
 ## Introduction
 
