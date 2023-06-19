@@ -7,7 +7,18 @@ This API provides endpoints to perform CRUD operations on ads.
 
 ## Base URL
 
-The base URL for all endpoints is https://deletemee20230616111844.azurewebsites.net/swagger/index.html) .
+The base URL for all endpoints is https://deletemee20230616111844.azurewebsites.net/swagger/index.html.
+
+
+## Authentication
+
+- User Role:
+  - Username: richard_user
+  - Password: passwordUser
+- Admin Role:
+  - Username: richard_admin
+  - Password: passwordAdmin
+
 
 ## Retrieve All Ads
 
