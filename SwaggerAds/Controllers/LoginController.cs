@@ -9,13 +9,7 @@ using System.Text;
 
 namespace SwaggerAds.Controllers
 {
-    //public class LoginController : Controller
-    //{
-    //    public IActionResult Index()
-    //    {
-    //        return View();
-    //    }
-    //}
+
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("AllowAll")]

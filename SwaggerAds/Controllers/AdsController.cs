@@ -12,9 +12,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace SwaggerAds.Controllers;
 
+[Route("api/[controller]")]
 [ApiController]
-[Route("/")]
-[EnableCors("AllowAl")]
+[EnableCors("AllowAll")]
 
 public class AdsController : ControllerBase
 {
@@ -25,15 +25,19 @@ public class AdsController : ControllerBase
     }
     // READ ALL ///////////////////////////////////////////////////////
     /// <summary>
-    /// Retrieve ALL adverts from the database
+    /// Retrieve ALL ads from the database
     /// </summary>
     /// <returns>
-    /// A full list of ALL adverts
+    /// A full list of ALL ads
     /// </returns>
     /// <remarks>
-    /// Example end point: GET /api/Ads
+    /// Example end point: GET /api/ads
     /// </remarks>
-    [HttpGet(Name = "GetAds")]
+    /// <response code="200">
+    /// Successfully returned a full list of ALL ads
+    /// </response>
+    [HttpGet]
+    [Authorize(Roles = "Admin, User")]
     public async Task<ActionResult<List<Ads>>> GetAll()
     {
         return Ok(await _dbContext.AdContext.ToListAsync());
@@ -50,8 +54,9 @@ public class AdsController : ControllerBase
     /// <remarks>
     /// Eaxmple end point: Get /api/Ads?id=4
     /// </remarks>
+    [HttpGet]
     [Authorize(Roles = "Admin, User")]
-    [HttpGet("{id}", Name = "GetAd")]
+    [Route("{id}")]
     public async Task<ActionResult<Ads>> GetAd(int id)
     {
         var advert = await _dbContext.AdContext.FindAsync(id);
@@ -73,13 +78,14 @@ public class AdsController : ControllerBase
     /// <remarks>
     /// Eaxmple end point: Post /api/Ads
     /// </remarks>
-    [Authorize(Roles ="Admin, User")]
-    [HttpPost(Name = "CreateAd")]
-    public async Task<ActionResult<Ads>> CreateAd(Ads newAd)
+    /// 
+    [HttpPost]
+    [Authorize(Roles = "Admin, User")]
+    public ActionResult<Ads> CreateAd(Ads newAd)
     {
-         _dbContext.AdContext.Add(newAd);
-         _dbContext.SaveChanges();
-         return Ok(newAd);
+        _dbContext.AdContext.Add(newAd);
+        _dbContext.SaveChanges();
+        return Ok(newAd);
 
     }
 
@@ -95,9 +101,9 @@ public class AdsController : ControllerBase
     /// Eaxmple end point: Get /api/Ads?id=4
     /// </remarks>
     /// 
-
+    [HttpDelete]
     [Authorize(Roles = "Admin")]
-    [HttpDelete("{id}",Name = "DeleteAd")]
+    [Route("{id}")]
     public async Task<ActionResult<Ads>> DeleteAd(int id)
     {
         var adToDelete = _dbContext.AdContext.First(x => x.Id == id);
@@ -109,8 +115,20 @@ public class AdsController : ControllerBase
         _dbContext.SaveChanges();
         return Ok("Deleted "+adToDelete);   
     }
+    // Update ONE ///////////////////////////////////////////////////////
+
+    /// <summary>
+    /// Update one entire advert
+    /// </summary>
+    /// <returns>
+    /// Nada
+    /// </returns>
+    /// <remarks>
+    /// Eaxmple end point: Get /api/Ads?id=4
+    /// </remarks>
+    [HttpPut]
     [Authorize(Roles = "Admin")]
-    [HttpPut("{id}",Name = "Update")]
+    [Route("{id}")]
     public async Task<IActionResult> UpateAdvert(int id, Ads advert)
     {
         var advertToUpdate = _dbContext.AdContext.First(x => x.Id == id);
@@ -126,10 +144,10 @@ public class AdsController : ControllerBase
         await _dbContext.SaveChangesAsync();
         return Ok(advertToUpdate);
     }
-    [Authorize(Roles = "Admin")]
     [HttpPatch]
-    [Route("id")]
-    public async Task<ActionResult<Ads>> PatchAdd(Microsoft.AspNetCore.JsonPatch.JsonPatchDocument advert, int id)
+    [Authorize(Roles = "Admin")]
+    [Route("{id}")]
+    public async Task<ActionResult<Ads>> PatchAdd(JsonPatchDocument advert, int id)
     {
         var advertToUpdate = await _dbContext.AdContext.FindAsync(id);
 

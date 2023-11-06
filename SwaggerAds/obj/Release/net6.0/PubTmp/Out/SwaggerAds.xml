@@ -6,14 +6,17 @@
     <members>
         <member name="M:SwaggerAds.Controllers.AdsController.GetAll">
             <summary>
-            Retrieve ALL adverts from the database
+            Retrieve ALL ads from the database
             </summary>
             <returns>
-            A full list of ALL adverts
+            A full list of ALL ads
             </returns>
             <remarks>
-            Example end point: GET /api/Ads
+            Example end point: GET /api/ads
             </remarks>
+            <response code="200">
+            Successfully returned a full list of ALL ads
+            </response>
         </member>
         <member name="M:SwaggerAds.Controllers.AdsController.GetAd(System.Int32)">
             <summary>
@@ -36,6 +39,7 @@
             <remarks>
             Eaxmple end point: Post /api/Ads
             </remarks>
+            
         </member>
         <member name="M:SwaggerAds.Controllers.AdsController.DeleteAd(System.Int32)">
             <summary>
@@ -48,6 +52,17 @@
             Eaxmple end point: Get /api/Ads?id=4
             </remarks>
             
+        </member>
+        <member name="M:SwaggerAds.Controllers.AdsController.UpateAdvert(System.Int32,SwaggerAds.Models.Ads)">
+            <summary>
+            Update one entire advert
+            </summary>
+            <returns>
+            Nada
+            </returns>
+            <remarks>
+            Eaxmple end point: Get /api/Ads?id=4
+            </remarks>
         </member>
         <member name="T:SwaggerAds.Data.ApplicationDbContext">
             <summary>
@@ -63,12 +78,6 @@
             <summary>
             Class responsible for initializing data in the application.
             </summary>
-        </member>
-        <member name="M:SwaggerAds.Data.DataInitializer.#ctor(SwaggerAds.Data.ApplicationDbContext)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SwaggerAds.Data.DataInitializer"/> class.
-            </summary>
-            <param name="dbContext">The application database context.</param>
         </member>
         <member name="M:SwaggerAds.Data.DataInitializer.SeedData">
             <summary>

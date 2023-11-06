@@ -14,10 +14,10 @@ namespace SwaggerAds.Data
     public class DataInitializer
     {
         private readonly ApplicationDbContext _dbContext;
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DataInitializer"/> class.
-        /// </summary>
-        /// <param name="dbContext">The application database context.</param>
+        ///// <summary>
+        ///// Initializes a new instance of the <see cref="DataInitializer"/> class.
+        ///// </summary>
+        ///// <param name="dbContext">The application database context.</param>
         public DataInitializer(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
